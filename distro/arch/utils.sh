@@ -19,3 +19,14 @@ install_package() {
 
   return 0
 }
+
+check_available() {
+  local command="$1"
+
+  if ! command -v $command >/dev/null 2>&1; then
+    echo "ERROR: $command is unavailable"
+    return 127
+  fi
+
+  return 0
+}

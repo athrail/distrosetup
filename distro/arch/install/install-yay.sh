@@ -2,7 +2,9 @@
 
 $yay="$HOME/.local/share/athrail/yay"
 
-if command -v yay >/dev/null 2>&1; then
+check_available yay
+
+if [[ $? -e 0 ]]; then
   echo "INFO: yay is already available, exiting"
   exit
 fi
