@@ -7,6 +7,12 @@ if [[ -d "$dotfiles" ]]; then
   exit 0
 fi
 
+check_available git
+if [[ $? -ne 0 ]]; then
+  echo "ERROR: need git for repo cloning, exiting"
+  exit 1
+fi
+
 git clone https://github.com/athrail/dotfiles "$dotfiles"
 
 if [[ $? -ne 0 ]]; then
