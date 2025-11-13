@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 pushd "$(dirname "$(realpath ${BASH_SOURCE[0]})")"
-. ./utils.sh
+. ./../utils.sh
 
 install_package lib32-vulkan-radeon
 install_package vulkan-radeon
